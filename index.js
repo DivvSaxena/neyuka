@@ -32,6 +32,8 @@ const passwordInputEl = document.getElementById('password-input')
 const signInButtonEl = document.getElementById('sign-in-btn')
 const createAccountButtonEl = document.getElementById('create-account-btn')
 
+const signOut
+
 /* === Event Listeners === */
 
 signInButtonEl.addEventListener('click', authSignInWithEmail)
