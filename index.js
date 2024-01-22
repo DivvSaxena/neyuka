@@ -39,7 +39,7 @@ const signOutButtonEl = document.getElementById('sign-out-btn')
 signInButtonEl.addEventListener('click', authSignInWithEmail)
 createAccountButtonEl.addEventListener('click', authCreateAccountWithEmail)
 
-signOutButtonEl.addEventListener('click',showLoggedOutView())
+signOutButtonEl.addEventListener('click',showLoggedOutView)
 
 /* === Main Code === */
 
@@ -53,8 +53,6 @@ onAuthStateChanged(auth, (user) => {
 
 
 /* === Functions - UI Functions === */
-
-showLoggedOutView()
 
 function authSignInWithEmail(){
 
