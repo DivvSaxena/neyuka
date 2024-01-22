@@ -32,12 +32,14 @@ const passwordInputEl = document.getElementById('password-input')
 const signInButtonEl = document.getElementById('sign-in-btn')
 const createAccountButtonEl = document.getElementById('create-account-btn')
 
-const signOut
+const signOutButtonEl = document.getElementById('sign-out-btn')
 
 /* === Event Listeners === */
 
 signInButtonEl.addEventListener('click', authSignInWithEmail)
 createAccountButtonEl.addEventListener('click', authCreateAccountWithEmail)
+
+signOutButtonEl.addEventListener('click',showLoggedOutView())
 
 /* === Main Code === */
 
