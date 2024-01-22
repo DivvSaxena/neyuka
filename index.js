@@ -64,7 +64,7 @@ function authSignInWithEmail(){
         clearAuthFields()
     })
     .catch((error) => {
-        console.error(error.message)
+        alert(error.message)
     })
 }
 
@@ -78,7 +78,7 @@ function authCreateAccountWithEmail(){
         clearAuthFields()
     })
     .catch((error) => {
-        console.log(error.message)
+        alert(error.message)
     })
 }
 
