@@ -9,7 +9,7 @@ html,body{
 .logo{
     border-bottom: 10px solid black;
     width: max-content;
-    margin: 6em auto 0;
+    margin: 4.3em auto 0;
 }
 
 /* === Typography === */
@@ -33,6 +33,14 @@ h1{
     background-size: cover;
 }
 
+/* === Nav === */
+nav{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 1em 0 0 0;
+}
+
 /* === Inputs === */
 input{
     font-size: 1.25rem;
@@ -45,23 +53,30 @@ input{
 
 /* === Buttons === */
 .providers-button{
-    border: 1px solid black;
     background-color: #FFFEFC;
-    margin: 5em 0 0 0;
-    width: 300px;
+    margin: 3em 0 0 0;
+    width: 310px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     font-family: 'Capriola', sans-serif;
 }
 
-.providers-button > img{
+.providers-btn{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #FFFEFC;
+    width: 100%;
+}
+
+.providers-btn > img{
     width: 35px;
     height: 35px;
     margin-left: 1em;
 }
 
-.providers-button > p{
+.providers-btn > p{
     font-size: 1.25rem;
 }
 
@@ -90,4 +105,24 @@ button:hover{
     padding: 0.5em;
     margin-top: 0.5em;
     background-color: #62EEA8;
+}
+
+.bobby{
+    border: 2px solid black;
+    margin-top: 5em;
+    height: 200px;
+    width: 300px;
+    background: url("https://media.giphy.com/media/10UeedrT5MIfPG/giphy.gif");
+    background-size: cover;
+}
+
+.icon-btn{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.icon-img-btn{
+    height: 50px;
+    width: 50px;
 }
