@@ -19,6 +19,18 @@ h1{
     margin: 0;
 }
 
+h3{
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 2rem;
+    margin: 0;
+    text-align: center;
+}
+
+.h3-keeper{
+    background-color: #FFDE00;
+
+}
+
 /* === Structure === */
 .container{
     max-width: 390px;
@@ -109,7 +121,7 @@ button:hover{
 
 .bobby{
     border: 2px solid black;
-    margin-top: 5em;
+    margin-top: 1em;
     height: 200px;
     width: 300px;
     background: url("https://media.giphy.com/media/10UeedrT5MIfPG/giphy.gif");
