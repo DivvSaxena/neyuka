@@ -122,7 +122,7 @@ function hideView(view){
     view.style.display = 'none'
 }
 
-function addNews(){
+async function addNews(){
     fetch('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=e653f9e6aac144d1907847d62e5fe6df')
     .then(res => res.json())
     .then(data => {
