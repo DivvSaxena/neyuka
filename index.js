@@ -53,7 +53,19 @@ signInWithGoogleBtnEl.addEventListener('click', authSignUpWithGoogle)
 onAuthStateChanged(auth, (user) => {
     if (user) {
         showLoggedInView()
-        addNews()
+        fetch('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=e653f9e6aac144d1907847d62e5fe6df')
+    .then(res => res.json())
+    .then(data => {
+        // console.log(data.articles[0].title)
+        for(let i =0; i<10;i++){
+            newsColumnEl.innerHTML += `
+                                       <div class="articles-news"> 
+                                            <p>${data.articles[i].title}</p>
+                                            <hr/>
+                                       </div>
+                                    `
+        }
+    })
     } else {
       showLoggedOutView()
     }
@@ -137,6 +149,4 @@ async function addNews(){
         }
     })
 }
-
-
 
