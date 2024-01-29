@@ -20,6 +20,7 @@ const firebaseConfig = {
   const auth = getAuth(app)
   const provider = new GoogleAuthProvider()
 
+  let arr =[]
 /* === UI === */
 
 /* === UI - Elements === */
@@ -54,18 +55,14 @@ onAuthStateChanged(auth, (user) => {
     if (user) {
         showLoggedInView()
         fetch('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=e653f9e6aac144d1907847d62e5fe6df')
-    .then(res => res.json())
-    .then(data => {
-        // console.log(data.articles[0].title)
-        for(let i =0; i<10;i++){
-            newsColumnEl.innerHTML += `
-                                       <div class="articles-news"> 
-                                            <p>${data.articles[i].title}</p>
-                                            <hr/>
-                                       </div>
-                                    `
-        }
-    })
+        .then(res => res.json())
+        .then(data => {
+            // console.log(data.articles[0].title)
+            for(let i =0; i<10;i++){
+                arr.push(`${data.articles[i].title}`)
+            }
+        })
+        addNews()
     } else {
       showLoggedOutView()
     }
@@ -134,19 +131,17 @@ function hideView(view){
     view.style.display = 'none'
 }
 
-async function addNews(){
-    fetch('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=e653f9e6aac144d1907847d62e5fe6df')
-    .then(res => res.json())
-    .then(data => {
-        // console.log(data.articles[0].title)
-        for(let i =0; i<10;i++){
-            newsColumnEl.innerHTML += `
+
+
+
+function addNews(){
+    for(let i = 0; i < arr.length ; i++){
+        newsColumnEl.innerHTML += `
                                        <div class="articles-news"> 
-                                            <p>${data.articles[i].title}</p>
+                                            <p>${arr[i]}}</p>
                                             <hr/>
                                        </div>
                                     `
-        }
-    })
+    }
 }
 
