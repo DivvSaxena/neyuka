@@ -50,13 +50,14 @@ signInWithGoogleBtnEl.addEventListener('click', authSignUpWithGoogle)
 
 /* === Main Code === */
 
-// onAuthStateChanged(auth, (user) => {
-//     if (user) {
-//         showLoggedInView()
-//     } else {
-//       showLoggedOutView()
-//     }
-//   });
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        showLoggedInView()
+        addNews()
+    } else {
+      showLoggedOutView()
+    }
+  });
 
 
 /* === Functions - UI Functions === */
@@ -121,16 +122,8 @@ function hideView(view){
     view.style.display = 'none'
 }
 
-showLoggedInView()
-
-
 function addNews(){
-
-}
-
-
-
-fetch('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=e653f9e6aac144d1907847d62e5fe6df')
+    fetch('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=e653f9e6aac144d1907847d62e5fe6df')
     .then(res => res.json())
     .then(data => {
         // console.log(data.articles[0].title)
@@ -143,3 +136,7 @@ fetch('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=e653f9e6aac1
                                     `
         }
     })
+}
+
+
+
