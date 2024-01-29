@@ -37,6 +37,9 @@ const createAccountButtonEl = document.getElementById('create-account-btn')
 
 const signOutButtonEl = document.getElementById('sign-out-btn')
 
+const newsEl = document.getElementById('news')
+const newsColumnEl = document.getElementById('news-column')
+
 /* === Event Listeners === */
 
 signInButtonEl.addEventListener('click', authSignInWithEmail)
@@ -47,13 +50,13 @@ signInWithGoogleBtnEl.addEventListener('click', authSignUpWithGoogle)
 
 /* === Main Code === */
 
-onAuthStateChanged(auth, (user) => {
-    if (user) {
-        showLoggedInView()
-    } else {
-      showLoggedOutView()
-    }
-  });
+// onAuthStateChanged(auth, (user) => {
+//     if (user) {
+//         showLoggedInView()
+//     } else {
+//       showLoggedOutView()
+//     }
+//   });
 
 
 /* === Functions - UI Functions === */
@@ -117,3 +120,26 @@ function showView(view){
 function hideView(view){
     view.style.display = 'none'
 }
+
+showLoggedInView()
+
+
+function addNews(){
+
+}
+
+
+
+fetch('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=e653f9e6aac144d1907847d62e5fe6df')
+    .then(res => res.json())
+    .then(data => {
+        // console.log(data.articles[0].title)
+        for(let i =0; i<10;i++){
+            newsColumnEl.innerHTML += `
+                                       <div class="articles-news"> 
+                                            <p>${data.articles[i].title}</p>
+                                            <hr/>
+                                       </div>
+                                    `
+        }
+    })

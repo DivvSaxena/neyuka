@@ -36,13 +36,13 @@ h3{
     max-width: 390px;
     border: 2px solid black;
     margin: 0 auto;
-    height: 1000px;
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 100%;
     background-image: url('./assets/bg-logout.jpg');
     background-size: cover;
+    height: 100vh;
 }
 
 /* === Nav === */
@@ -137,4 +137,23 @@ button:hover{
 .icon-img-btn{
     height: 50px;
     width: 50px;
+}
+
+#news{
+    border: 2px solid black;
+    width: 390px;
+    background-image: url("./assets/bg-logout.jpg");
+    background-size: cover;
+}
+
+#news > h1{
+    text-align: center;
+}
+
+.articles-news{
+    text-align: center;
+    background-color: #171313;
+    font-size: 1.5rem;
+    color: white;
+    font-family: 'Capriola', sans-serif;
 }
